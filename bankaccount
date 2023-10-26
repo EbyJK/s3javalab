@@ -1,0 +1,90 @@
+import java.util.Scanner;
+class Bankacc{
+       Scanner s= new Scanner(System.in);
+       int accno;
+       double accbal;
+       String custname;
+       
+       public void startacc(){
+       System.out.println("Enter customer name:");
+       custname=s.nextLine();
+       
+       System.out.println("Enter the account number:");
+       accno=s.nextInt();
+       
+       
+       depocash();
+        }
+       public void depocash(){
+       double cash;
+       System.out.println("Enter deposit amount");
+       cash=s.nextDouble();
+       accbal+=cash;
+       System.out.println("deposit was successful");
+       printbalance(accbal);
+       
+       }
+       public void withdrawcash(){
+       double cash;
+       System.out.println("Enter amount to be withdrawn:");
+       cash=s.nextDouble();
+       if (cash>accbal){System.out.println("no sufficient balance in account");}
+       else{accbal-=cash;
+       System.out.println("Withdrawal was successful");
+       printbalance(accbal);}
+       }
+public void printbalance(double acbal){
+System.out.println("the balance is: "+acbal);
+}
+public void printdetails(){
+System.out.println("----------");
+System.out.println("The account number is "+ accno);
+System.out.println("the customer name is "+custname);
+printbalance(accbal);
+
+}
+Bankacc(){
+   
+accbal=0;
+
+}
+Bankacc(int an,String  n){
+accno= an;
+accbal=0;
+custname=n;
+
+}
+
+}
+
+
+public class Prog6{
+public static void main(String args[]){
+System.out.println("EBY J KAVUNGAL rollno:14");
+Scanner scan=new Scanner(System.in);
+System.out.println("----------");
+System.out.println("account 1");
+Bankacc b=new Bankacc();
+b.startacc();
+b.withdrawcash();
+b.printdetails();
+System.out.println("-----------");
+System.out.println("Account 2");
+System.out.println("Enter customer name:");
+String Name= scan.nextLine();
+
+System.out.println("Enter account number:");
+int Accno= scan.nextInt();
+
+Bankacc c=new Bankacc(Accno,Name);
+c.depocash();
+c.withdrawcash();
+c.printdetails();
+System.out.println("-----------");
+
+
+
+
+
+}
+}
