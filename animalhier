@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Animal {
+          String name;
+          int age;
+String type;
+       Animal(String N,int a,String t){
+          name=N;
+          age=a;
+          type=t;
+}
+void displaydetails(){
+             System.out.println(&quot;----&quot;);
+              System.out.println(&quot;Name of animal is:&quot;+name);
+              System.out.println(&quot;age of animal is:&quot;+age);
+              System.out.println(&quot;type of animal is:&quot;+type);
+              System.out.println(&quot;----&quot;);
+
+}}
+class Herbivore extends Animal{
+  Herbivore(String N,int a,String t){
+        super(N,a,t);
+}
+}
+
+class Carnivore extends Animal{
+Carnivore(String N,int a, String t){
+ super(N,a,t);
+}
+}
+public class Prog7{
+public static void main(String args[]){
+  System.out.println(&quot;EBY J KAVUNGAL rollno:14&quot;);
+        Scanner s=new Scanner(System.in);
+        System.out.println(&quot;Animal 1&quot;);
+        System.out.println(&quot;Enter name of a herbivore: &quot;);
+String Name=s.nextLine();
+System.out.println(&quot;Enter age:&quot;);
+        int A=s.nextInt();
+         Herbivore H=new Herbivore(Name,A,&quot;herbivore&quot;);
+H.displaydetails();
+System.out.println(&quot;ANimal 2&quot;);
+        Scanner scan=new Scanner(System.in);
+         System.out.println(&quot;Enter name of carnivore: &quot;);
+         String Nam=scan.nextLine();
+System.out.println(&quot;Enter age:&quot;);
+int Ag=scan.nextInt();       
+Carnivore C=new Carnivore(Nam,Ag,&quot;Carnivore&quot;);
+        C.displaydetails();
+}}
