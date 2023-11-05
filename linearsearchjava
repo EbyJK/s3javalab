@@ -1,0 +1,52 @@
+ //linear search program
+import java.util.Scanner;
+public class Prog12{
+  public static void main(String args[]){
+  int i;
+Scanner s=new Scanner(System.in);
+System.out.println("\nEBY J KAVUNGAL rollno:14\n");
+System.out.println("Enter size of the array: ");
+int n=s.nextInt();
+int arr[]=new int[n];
+System.out.println("Enter elements to the array");
+for (i=0;i<n;i++){
+arr[i]=s.nextInt();
+
+}
+    System.out.println("inserted..");
+    System.out.println("Enter element to be searched");
+    int sk=s.nextInt();
+   
+    linearsearch(arr,sk);
+  }
+ 
+  public static void  linearsearch(int arr[],int targ){
+  int m=arr.length;
+  int flag=0;
+  int c=0;
+  for(int j=0;j<m;j++){
+  if(arr[j]==targ){
+  flag=1;
+  int pos=j;
+  c++;
+  System.out.println("Element found at position : "+(pos+1));
+  }}
+  if(c>0){
+  System.out.println("Element "+targ+ " found " + c + " times");
+ 
+ 
+  }
+  if (flag==0){
+  System.out.println("Element not found in the array.");
+  printarray(arr);
+ 
+  }
+  }
+  public static void printarray(int[] arr) {
+  System.out.println("Inputted array is: ");
+        for (int value:arr) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+    }
+}
