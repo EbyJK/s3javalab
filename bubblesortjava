@@ -1,0 +1,62 @@
+// bubble sort program
+
+
+import java.util.Scanner;
+
+
+public class Prog11{
+    public static void main(String[] args) {
+    int i;
+    Scanner s=new Scanner(System.in);
+    System.out.println("\nEBY J KAVUNGAL rollno:14\n");
+    System.out.println("enter size of the array: ");
+    int n=s.nextInt();
+        int arr[] = new int[n];
+        System.out.println("Enter elements to the array: ");
+        for(i=0;i<n;i++){
+            arr[i]=s.nextInt();
+            }
+        //System.out.println("Inserted.. ");
+       
+
+        //System.out.println("Original Array is: ");
+       // printarray(arr);
+
+        bubblesort(arr);
+
+        System.out.println("bubble Sorted Array is: ");
+        printarray(arr);
+    }
+
+    public static void bubblesort(int[] arr) {
+        int m = arr.length;
+        int c=0;
+        for (int j = 0; j <= m - 1; j++) {
+            for (int k= 0; k< m -1-j; k++) {
+                 c++;
+                if (arr[k] > arr[k + 1]) {
+                   
+                    int temp = arr[k];
+                    arr[k] = arr[k + 1];
+                    arr[k + 1] = temp;
+                    //System.out.println("Pass no: "+ (c) );
+                   
+                   
+                }
+                else{
+                 //System.out.println("Pass no: "+(c)+" no swap ");
+                 
+                 }
+            }
+            printarray(arr);
+        }
+       
+    }
+
+    public static void printarray(int[] arr) {
+        for (int value:arr) {
+            System.out.print(value + "\t");
+        }
+        System.out.println();
+    }
+}
