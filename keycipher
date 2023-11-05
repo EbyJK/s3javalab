@@ -1,0 +1,37 @@
+    //cipher program
+   
+import java.io.*;
+import java.util.*;
+public class Prog10{
+public static void main(String[] args)throws IOException{
+System.out.println("EBY J KAVUNGAL rollno:14");
+  int num,i,key;
+  char ch,b;
+String fname;
+  Scanner s=new Scanner(System.in);
+  System.out.println("Enter the filename:  ");
+  fname=s.nextLine();
+  FileInputStream fin =new FileInputStream(fname);
+  FileOutputStream fout=new FileOutputStream("cipher.txt");
+  System.out.println("Enter the key: ");
+  key=s.nextInt();
+  while((i=fin.read())!=-1){
+  ch=(char)i;
+  if( ch==' '||ch=='\n'){
+ 
+  fout.write(ch);
+}
+  else{
+ 
+  num=(int)ch;
+b=(char)(num+key);
+fout.write(b);
+}
+}  
+
+  fout.close();
+  fin.close();
+  System.out.println("completed..");
+
+}
+ }
